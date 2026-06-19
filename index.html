@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Robert - Profesjonalna nauka gry na perkusji oraz oprawa muzyczna imprez. Zarezerwuj termin już dziś!">
+  <title>Robert - Nauka Gry na Perkusji & DJ Konferansjer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Floating Sticky Header -->
+  <header class="main-header">
+    <div class="logo-container">
+      <img src="logo.png" alt="Robert Logo" class="logo-img" onerror="this.style.display='none'">
+      <span class="logo-text">ROBERT</span>
+    </div>
+    <!-- Social Media Links -->
+    <div class="social-links">
+      <a href="https://www.facebook.com/balachowskievents" target="_blank" rel="noopener noreferrer" class="social-icon" title="Facebook">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+        </svg>
+      </a>
+      <a href="https://www.instagram.com/balachovsky/" target="_blank" rel="noopener noreferrer" class="social-icon" title="Instagram">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+        </svg>
+      </a>
+    </div>
+  </header>
+
+  <!-- Interactive Split Screen Container -->
+  <main class="split-container focus-drums">
+    
+    <!-- Drums Section (Left/Top) -->
+    <section class="side drums-side">
+      <div class="side-bg"></div>
+      <div class="content-wrapper">
+        <div class="glass-card">
+          <span class="pre-title">Edukacja muzyczna</span>
+          <h2 class="title">Nauka gry na perkusji</h2>
+          <p class="desc-lead">Rozwiń swoje poczucie rytmu i opanuj grę na perkusji od podstaw pod okiem doświadczonego nauczyciela.</p>
+          
+          <ul class="desc-list">
+            <li>Indywidualne podejście do ucznia</li>
+            <li>Lekcje dla osób w każdym wieku</li>
+            <li>Nauka podstawowych technik</li>
+            <li>Nauka rytmiki</li>
+          </ul>
+          
+          <a href="kontakt.html?service=drums" class="btn btn-purple">Umów lekcję</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- DJ Section (Right/Bottom) -->
+    <section class="side dj-side">
+      <div class="side-bg"></div>
+      <div class="content-wrapper">
+        <div class="glass-card">
+          <span class="pre-title">Oprawa muzyczna & Eventy</span>
+          <h2 class="title">DJ Konferansjer<br><span style="font-size: 0.85em; font-weight: 500;">Imprezy okolicznościowe</span></h2>
+          <p class="desc-lead">Niezapomniane emocje muzyczne i profesjonalne prowadzenie Twojego wydarzenia.</p>
+          
+          <ul class="desc-list">
+            <li>Oprawa muzyczna na Twojej imprezie</li>
+            <li>Prowadzenie imprezy jako konferansjer</li>
+            <li>Profesjonalne nagłośnienie i oświetlenie</li>
+            <li>Indywidualne podejście</li>
+          </ul>
+          
+          <a href="kontakt.html?service=dj" class="btn btn-rosegold">Zarezerwuj termin</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visual divider line -->
+    <div class="divider-line"></div>
+
+  </main>
+
+  <!-- Script for split hover (desktop) & scroll transitions (mobile) -->
+  <script>
+    const container = document.querySelector('.split-container');
+    const drumsSide = document.querySelector('.drums-side');
+    const djSide = document.querySelector('.dj-side');
+
+    // --- DESKTOP HOVER INTERACTION ---
+    drumsSide.addEventListener('mouseenter', () => {
+      if (window.innerWidth > 768 && window.innerHeight <= window.innerWidth) {
+        container.classList.add('hover-left');
+        container.classList.remove('hover-right');
+      }
+    });
+
+    drumsSide.addEventListener('mouseleave', () => {
+      if (window.innerWidth > 768 && window.innerHeight <= window.innerWidth) {
+        container.classList.remove('hover-left');
+      }
+    });
+
+    djSide.addEventListener('mouseenter', () => {
+      if (window.innerWidth > 768 && window.innerHeight <= window.innerWidth) {
+        container.classList.add('hover-right');
+        container.classList.remove('hover-left');
+      }
+    });
+
+    djSide.addEventListener('mouseleave', () => {
+      if (window.innerWidth > 768 && window.innerHeight <= window.innerWidth) {
+        container.classList.remove('hover-right');
+      }
+    });
+
+
+    // --- MOBILE SCROLL-DRIVEN INTERACTION ---
+    function handleMobileScroll() {
+      // Check if viewport is mobile/portrait
+      if (window.innerWidth <= 768 || window.innerHeight > window.innerWidth) {
+        const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollY = window.scrollY;
+        
+        // Calculate scroll ratio (0 = top, 1 = bottom)
+        const ratio = scrollHeight > 0 ? scrollY / scrollHeight : 0;
+        
+        // Map ratio to divider height (65% at top, 35% at bottom)
+        const splitY = 65 - (ratio * 30);
+        
+        // Apply variable to document
+        document.documentElement.style.setProperty('--split-y', `${splitY}%`);
+        
+        // Toggle focus classes for styling adjustments
+        if (ratio < 0.45) {
+          container.classList.add('focus-drums');
+          container.classList.remove('focus-dj');
+        } else if (ratio > 0.55) {
+          container.classList.add('focus-dj');
+          container.classList.remove('focus-drums');
+        } else {
+          // Mid-way transition
+          container.classList.remove('focus-drums', 'focus-dj');
+        }
+      } else {
+        // Reset custom property when switching to desktop
+        document.documentElement.style.removeProperty('--split-y');
+        container.classList.remove('focus-drums', 'focus-dj');
+      }
+    }
+
+    // Bind scroll and resize events
+    window.addEventListener('scroll', handleMobileScroll, { passive: true });
+    window.addEventListener('resize', handleMobileScroll);
+    
+    // Initial call to set correct state
+    handleMobileScroll();
+  </script>
+</body>
+</html>

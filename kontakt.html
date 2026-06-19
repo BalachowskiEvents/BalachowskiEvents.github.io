@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Skontaktuj się telefonicznie pod numerem +48 518 980 551 lub mailowo na robert.balachowski@gmail.com.">
+  <title>Robert - Kontakt i Rezerwacja</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Grid alignment fix when one column is active */
+    .contact-grid.single-col {
+      grid-template-columns: 1fr;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .contact-subtitle {
+      color: var(--text-gray);
+      font-size: 1.1rem;
+      margin-top: 5px;
+    }
+
+    /* Static Navigation Links */
+    .contact-links {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin: 30px 0 10px 0;
+    }
+
+    .contact-link {
+      color: var(--text-gray);
+      text-decoration: none;
+      font-family: var(--font-title);
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 8px 16px;
+      border-bottom: 2px solid transparent;
+      transition: all 0.3s ease;
+    }
+
+    .contact-link:hover {
+      color: var(--text-white);
+    }
+
+    .contact-link.active#linkDrums {
+      color: var(--purple-glow);
+      border-color: var(--purple-glow);
+      text-shadow: 0 0 10px rgba(var(--purple-glow-rgb), 0.3);
+    }
+
+    .contact-link.active#linkDj {
+      color: var(--rosegold-glow);
+      border-color: var(--rosegold-glow);
+      text-shadow: 0 0 10px rgba(var(--rosegold-glow-rgb), 0.3);
+    }
+  </style>
+</head>
+<body class="contact-body">
+
+  <!-- Navigation bar -->
+  <nav class="contact-nav">
+    <a href="index.html" class="btn-back">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="19" y1="12" x2="5" y2="12"></line>
+        <polyline points="12 19 5 12 12 5"></polyline>
+      </svg>
+      Wróć do strony głównej
+    </a>
+    
+    <div class="logo-container">
+      <img src="logo.png" alt="Robert Logo" class="logo-img" onerror="this.style.display='none'">
+      <span class="logo-text">ROBERT</span>
+    </div>
+  </nav>
+
+  <!-- Main contact workspace -->
+  <main class="contact-container">
+    
+    <div class="contact-header">
+      <h1 class="contact-title">Skontaktuj się</h1>
+      <p class="contact-subtitle">Zadzwoń do mnie lub wyślij wiadomość e-mail, aby omówić szczegóły.</p>
+    </div>
+
+    <!-- Static Navigation Links -->
+    <div class="contact-links">
+      <a href="kontakt.html?service=drums" class="contact-link" id="linkDrums">Lekcje Perkusji</a>
+      <a href="kontakt.html?service=dj" class="contact-link" id="linkDj">DJ & Eventy</a>
+    </div>
+
+    <!-- Main dynamic contact layout grid -->
+    <div class="contact-grid" id="contactGrid">
+
+      <!-- DRUMS COLUMN -->
+      <div class="service-column" id="drumsCol">
+        <div class="glass-card service-info-card service-theme-drums">
+          <div>
+            <span class="service-badge">Perkusja</span>
+            <h2 class="title" style="font-size: 2.2rem;">Nauka gry na perkusji</h2>
+            <p class="service-description">Zapraszam na lekcje gry na perkusji. Indywidualne podejście, profesjonalny sprzęt i świetna atmosfera gwarantowane!</p>
+          </div>
+
+          <div class="contact-cards-container">
+            <!-- Click to Call Card -->
+            <a href="tel:+48518980551" class="phone-card">
+              <div class="phone-icon-wrapper">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+              </div>
+              <div>
+                <div class="phone-label">Zadzwoń do mnie</div>
+                <div class="phone-number">+48 518 980 551</div>
+              </div>
+            </a>
+
+            <!-- Click to Email Card -->
+            <a href="mailto:robert.balachowski@gmail.com" class="email-card">
+              <div class="email-icon-wrapper">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </div>
+              <div>
+                <div class="email-label">Napisz wiadomość</div>
+                <div class="email-value">robert.balachowski@gmail.com</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- DJ COLUMN -->
+      <div class="service-column" id="djCol">
+        <div class="glass-card service-info-card service-theme-dj">
+          <div>
+            <span class="service-badge">DJ / Eventy</span>
+            <h2 class="title" style="font-size: 2.2rem;">DJ & Konferansjer</h2>
+            <p class="service-description">Oprawa muzyczna wesel, bankietów, studniówek i imprez firmowych. Zadbaj o profesjonalną jakość muzyki, nagłośnienia i oświetlenia.</p>
+          </div>
+
+          <div class="contact-cards-container">
+            <!-- Click to Call Card -->
+            <a href="tel:+48518980551" class="phone-card">
+              <div class="phone-icon-wrapper">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+              </div>
+              <div>
+                <div class="phone-label">Zadzwoń do mnie</div>
+                <div class="phone-number">+48 518 980 551</div>
+              </div>
+            </a>
+
+            <!-- Click to Email Card -->
+            <a href="mailto:robert.balachowski@gmail.com" class="email-card">
+              <div class="email-icon-wrapper">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </div>
+              <div>
+                <div class="email-label">Napisz wiadomość</div>
+                <div class="email-value">robert.balachowski@gmail.com</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Script to toggle active view according to URL parameters -->
+  <script>
+    const drumsCol = document.getElementById('drumsCol');
+    const djCol = document.getElementById('djCol');
+    const contactGrid = document.getElementById('contactGrid');
+    const titleEl = document.querySelector('.contact-title');
+    const subtitleEl = document.querySelector('.contact-subtitle');
+
+    function setView(serviceType) {
+      const linkDrums = document.getElementById('linkDrums');
+      const linkDj = document.getElementById('linkDj');
+      linkDrums.classList.remove('active');
+      linkDj.classList.remove('active');
+
+      if (serviceType === 'drums') {
+        drumsCol.style.display = 'block';
+        djCol.style.display = 'none';
+        contactGrid.classList.add('single-col');
+        titleEl.innerHTML = '<span style="color: var(--purple-glow)">Nauka gry na perkusji</span>';
+        subtitleEl.textContent = 'Skontaktuj się telefonicznie lub napisz wiadomość e-mail.';
+        linkDrums.classList.add('active');
+      } else if (serviceType === 'dj') {
+        drumsCol.style.display = 'none';
+        djCol.style.display = 'block';
+        contactGrid.classList.add('single-col');
+        titleEl.innerHTML = '<span style="color: var(--rosegold-glow)">DJ & Konferansjer</span>';
+        subtitleEl.textContent = 'Zadzwoń pod podany numer lub wyślij e-mail, aby omówić szczegóły.';
+        linkDj.classList.add('active');
+      } else {
+        // Show all
+        drumsCol.style.display = 'block';
+        djCol.style.display = 'block';
+        contactGrid.classList.remove('single-col');
+        titleEl.innerHTML = 'Skontaktuj się';
+        subtitleEl.textContent = 'Zadzwoń do mnie lub wyślij wiadomość e-mail, aby omówić szczegóły.';
+      }
+    }
+
+    // Initial setup from URL parameters
+    const params = new URLSearchParams(window.location.search);
+    const initialService = params.get('service');
+    if (initialService === 'drums' || initialService === 'dj') {
+      setView(initialService);
+    } else {
+      setView('all');
+    }
+  </script>
+</body>
+</html>
