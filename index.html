@@ -33,30 +33,9 @@
   </header>
 
   <!-- Interactive Split Screen Container -->
-  <main class="split-container focus-drums">
+  <main class="split-container focus-dj">
     
-    <!-- Drums Section (Left/Top) -->
-    <section class="side drums-side">
-      <div class="side-bg"></div>
-      <div class="content-wrapper">
-        <div class="glass-card">
-          <span class="pre-title">Edukacja muzyczna</span>
-          <h2 class="title">Nauka gry na perkusji</h2>
-          <p class="desc-lead">Rozwiń swoje poczucie rytmu i opanuj grę na perkusji od podstaw pod okiem doświadczonego nauczyciela.</p>
-          
-          <ul class="desc-list">
-            <li>Indywidualne podejście do ucznia</li>
-            <li>Lekcje dla osób w każdym wieku</li>
-            <li>Nauka podstawowych technik</li>
-            <li>Nauka rytmiki</li>
-          </ul>
-          
-          <a href="kontakt.html?service=drums" class="btn btn-purple">Umów lekcję</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- DJ Section (Right/Bottom) -->
+    <!-- DJ Section (Left/Top) -->
     <section class="side dj-side">
       <div class="side-bg"></div>
       <div class="content-wrapper">
@@ -72,7 +51,28 @@
             <li>Indywidualne podejście</li>
           </ul>
           
-          <a href="kontakt.html?service=dj" class="btn btn-rosegold">Zarezerwuj termin</a>
+          <a href="kontakt.html?service=dj" class="btn btn-purple">Zarezerwuj termin</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Drums Section (Right/Bottom) -->
+    <section class="side drums-side">
+      <div class="side-bg"></div>
+      <div class="content-wrapper">
+        <div class="glass-card">
+          <span class="pre-title">Edukacja muzyczna</span>
+          <h2 class="title">Nauka gry na perkusji</h2>
+          <p class="desc-lead">Rozwiń swoje poczucie rytmu i opanuj grę na perkusji od podstaw pod okiem doświadczonego nauczyciela.</p>
+          
+          <ul class="desc-list">
+            <li>Indywidualne podejście do ucznia</li>
+            <li>Lekcje dla osób w każdym wieku</li>
+            <li>Nauka podstawowych technik</li>
+            <li>Nauka rytmiki</li>
+          </ul>
+          
+          <a href="kontakt.html?service=drums" class="btn btn-rosegold">Umów lekcję</a>
         </div>
       </div>
     </section>
@@ -89,27 +89,27 @@
     const djSide = document.querySelector('.dj-side');
 
     // --- DESKTOP HOVER INTERACTION ---
-    drumsSide.addEventListener('mouseenter', () => {
+    djSide.addEventListener('mouseenter', () => {
       if (window.innerWidth > 768 && window.innerHeight <= window.innerWidth) {
         container.classList.add('hover-left');
         container.classList.remove('hover-right');
       }
     });
 
-    drumsSide.addEventListener('mouseleave', () => {
+    djSide.addEventListener('mouseleave', () => {
       if (window.innerWidth > 768 && window.innerHeight <= window.innerWidth) {
         container.classList.remove('hover-left');
       }
     });
 
-    djSide.addEventListener('mouseenter', () => {
+    drumsSide.addEventListener('mouseenter', () => {
       if (window.innerWidth > 768 && window.innerHeight <= window.innerWidth) {
         container.classList.add('hover-right');
         container.classList.remove('hover-left');
       }
     });
 
-    djSide.addEventListener('mouseleave', () => {
+    drumsSide.addEventListener('mouseleave', () => {
       if (window.innerWidth > 768 && window.innerHeight <= window.innerWidth) {
         container.classList.remove('hover-right');
       }
@@ -134,11 +134,11 @@
         
         // Toggle focus classes for styling adjustments
         if (ratio < 0.45) {
-          container.classList.add('focus-drums');
-          container.classList.remove('focus-dj');
-        } else if (ratio > 0.55) {
           container.classList.add('focus-dj');
           container.classList.remove('focus-drums');
+        } else if (ratio > 0.55) {
+          container.classList.add('focus-drums');
+          container.classList.remove('focus-dj');
         } else {
           // Mid-way transition
           container.classList.remove('focus-drums', 'focus-dj');

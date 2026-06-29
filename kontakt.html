@@ -46,13 +46,13 @@
       color: var(--text-white);
     }
 
-    .contact-link.active#linkDrums {
+    .contact-link.active#linkDj {
       color: var(--purple-glow);
       border-color: var(--purple-glow);
       text-shadow: 0 0 10px rgba(var(--purple-glow-rgb), 0.3);
     }
 
-    .contact-link.active#linkDj {
+    .contact-link.active#linkDrums {
       color: var(--rosegold-glow);
       border-color: var(--rosegold-glow);
       text-shadow: 0 0 10px rgba(var(--rosegold-glow-rgb), 0.3);
@@ -87,20 +87,20 @@
 
     <!-- Static Navigation Links -->
     <div class="contact-links">
-      <a href="kontakt.html?service=drums" class="contact-link" id="linkDrums">Lekcje Perkusji</a>
       <a href="kontakt.html?service=dj" class="contact-link" id="linkDj">DJ & Eventy</a>
+      <a href="kontakt.html?service=drums" class="contact-link" id="linkDrums">Lekcje Perkusji</a>
     </div>
 
     <!-- Main dynamic contact layout grid -->
     <div class="contact-grid" id="contactGrid">
 
-      <!-- DRUMS COLUMN -->
-      <div class="service-column" id="drumsCol">
-        <div class="glass-card service-info-card service-theme-drums">
+      <!-- DJ COLUMN -->
+      <div class="service-column" id="djCol">
+        <div class="glass-card service-info-card service-theme-dj">
           <div>
-            <span class="service-badge">Perkusja</span>
-            <h2 class="title" style="font-size: 2.2rem;">Nauka gry na perkusji</h2>
-            <p class="service-description">Zapraszam na lekcje gry na perkusji. Indywidualne podejście, profesjonalny sprzęt i świetna atmosfera gwarantowane!</p>
+            <span class="service-badge">DJ / Eventy</span>
+            <h2 class="title" style="font-size: 2.2rem;">DJ & Konferansjer</h2>
+            <p class="service-description">Oprawa muzyczna wesel, bankietów, studniówek i imprez firmowych. Zadbaj o profesjonalną jakość muzyki, nagłośnienia i oświetlenia.</p>
           </div>
 
           <div class="contact-cards-container">
@@ -120,13 +120,13 @@
         </div>
       </div>
 
-      <!-- DJ COLUMN -->
-      <div class="service-column" id="djCol">
-        <div class="glass-card service-info-card service-theme-dj">
+      <!-- DRUMS COLUMN -->
+      <div class="service-column" id="drumsCol">
+        <div class="glass-card service-info-card service-theme-drums">
           <div>
-            <span class="service-badge">DJ / Eventy</span>
-            <h2 class="title" style="font-size: 2.2rem;">DJ & Konferansjer</h2>
-            <p class="service-description">Oprawa muzyczna wesel, bankietów, studniówek i imprez firmowych. Zadbaj o profesjonalną jakość muzyki, nagłośnienia i oświetlenia.</p>
+            <span class="service-badge">Perkusja</span>
+            <h2 class="title" style="font-size: 2.2rem;">Nauka gry na perkusji</h2>
+            <p class="service-description">Zapraszam na lekcje gry na perkusji. Indywidualne podejście, profesjonalny sprzęt i świetna atmosfera gwarantowane!</p>
           </div>
 
           <div class="contact-cards-container">
@@ -168,14 +168,14 @@
         drumsCol.style.display = 'block';
         djCol.style.display = 'none';
         contactGrid.classList.add('single-col');
-        titleEl.innerHTML = '<span style="color: var(--purple-glow)">Nauka gry na perkusji</span>';
+        titleEl.innerHTML = '<span style="color: var(--rosegold-glow)">Nauka gry na perkusji</span>';
         subtitleEl.textContent = 'Skontaktuj się telefonicznie lub napisz wiadomość e-mail.';
         linkDrums.classList.add('active');
       } else if (serviceType === 'dj') {
         drumsCol.style.display = 'none';
         djCol.style.display = 'block';
         contactGrid.classList.add('single-col');
-        titleEl.innerHTML = '<span style="color: var(--rosegold-glow)">DJ & Konferansjer</span>';
+        titleEl.innerHTML = '<span style="color: var(--purple-glow)">DJ & Konferansjer</span>';
         subtitleEl.textContent = 'Zadzwoń pod podany numer lub wyślij e-mail, aby omówić szczegóły.';
         linkDj.classList.add('active');
       } else {
