@@ -255,7 +255,7 @@ p {
 }
 
 .title {
-  font-size: 1.8rem;
+  font-size: clamp(1.3rem, 3.5vw, 1.8rem);
   line-height: 1.2;
   margin-bottom: 0px;
   color: var(--text-white);
@@ -332,7 +332,7 @@ p {
   margin-bottom: 12px;
 }
 .split-container.hover-left .dj-side .title {
-  font-size: 2.8rem;
+  font-size: clamp(1.8rem, 5.5vw, 2.8rem);
   margin-bottom: 20px;
 }
 .split-container.hover-left .dj-side .desc-lead {
@@ -362,7 +362,7 @@ p {
   margin-bottom: 12px;
 }
 .split-container.hover-right .drums-side .title {
-  font-size: 2.8rem;
+  font-size: clamp(1.8rem, 5.5vw, 2.8rem);
   margin-bottom: 20px;
 }
 .split-container.hover-right .drums-side .desc-lead {
@@ -587,7 +587,7 @@ p {
   }
 
   .dj-side .content-wrapper {
-    top: calc(var(--split-y) * 0.42);
+    top: calc(var(--split-y) * 0.5 + 45px);
     transform: translate(-50%, -50%);
   }
 
@@ -603,7 +603,7 @@ p {
   }
 
   .title {
-    font-size: 1.4rem;
+    font-size: clamp(1.1rem, 4.5vw, 1.4rem);
   }
 
   .desc-lead {
@@ -626,7 +626,7 @@ p {
     margin-bottom: 6px;
   }
   .split-container.focus-dj .dj-side .title {
-    font-size: 1.8rem;
+    font-size: clamp(1.3rem, 5.5vw, 1.8rem);
     margin-bottom: 10px;
   }
   .split-container.focus-dj .dj-side .glass-card .desc-lead {
@@ -665,7 +665,7 @@ p {
     margin-bottom: 6px;
   }
   .split-container.focus-drums .drums-side .title {
-    font-size: 1.8rem;
+    font-size: clamp(1.3rem, 5.5vw, 1.8rem);
     margin-bottom: 10px;
   }
   .split-container.focus-drums .drums-side .glass-card .desc-lead {
